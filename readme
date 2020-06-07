@@ -3,5 +3,6 @@ aplicação..
 
  * yarn init -y
  * yarn add express
+ * criar o arquivo App.js
 
 
