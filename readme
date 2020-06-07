@@ -1,5 +1,7 @@
 Começando o projeto, deixarei descrito o passo a passo para o desenvolvimento desta
 aplicação..
 
-1 - yarn init -y
+ * yarn init -y
+ * yarn add express
+
 
