@@ -11,6 +11,8 @@ aplicação..
  * yarn sequelize migration:create --name=create-users
  * yarn sequelize db:migrate
  * yarn add mysql2 -g
+ * yarn add bcryptjs
+
 - - - - - - - - - - NODEDOM - - -  -- -- - - -- - - -- -
  Gerencia toda alteração que for realizada no código automaticamente
  - - - - - - -- -- - - - -- - -- -  - -- - -  -- - - - -
