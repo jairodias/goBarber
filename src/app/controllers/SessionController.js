@@ -1,4 +1,5 @@
 import JWT from 'jsonwebtoken';
+import authConfig from '../../config/auth';
 
 import User from '../models/User';
 
@@ -24,8 +25,8 @@ class SessionController {
         name,
         email,
       },
-      token: JWT.sign({ id }, '267cc471d855cbf955838f23531b1ab1', {
-        expiresIn: '7d',
+      token: JWT.sign({ id }, authConfig.secret, {
+        expiresIn: authConfig.expiresIn,
       }),
     });
   }
