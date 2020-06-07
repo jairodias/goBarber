@@ -3,8 +3,30 @@ aplicação..
 
  * yarn init -y
  * yarn add express
+ * yarn add sucrase nodemon -D
+ * yarn add eslint -D (verifica os padrões de codigo)
+ * yarn eslint --init
+ * yarn add sequelize
+ * yarn add sequelize-cli -D
+ * yarn sequelize migration:create --name=create-users
+ * yarn sequelize db:migrate
+ * yarn add mysql2 -g
+- - - - - - - - - - NODEDOM - - -  -- -- - - -- - - -- -
+ Gerencia toda alteração que for realizada no código automaticamente
+ - - - - - - -- -- - - - -- - -- -  - -- - -  -- - - - -
+
+
  * criar o arquivo App.js
  * criar o arquivo server.js
  * criar o arquivo de routes
+ _________________________________________________
+ * criar script personalizado para rodar o nodemon
+ dentro do package.json
+_________________________________________________
 
+* criar arquivo de configuração do nodemon
+(nodemon.json) para reconhece o sucrase
+
+
+_________________________________________________
 
