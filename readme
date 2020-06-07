@@ -4,5 +4,7 @@ aplicação..
  * yarn init -y
  * yarn add express
  * criar o arquivo App.js
+ * criar o arquivo server.js
+ * criar o arquivo de routes
 
 
