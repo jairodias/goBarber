@@ -13,6 +13,7 @@ aplicação..
  * yarn add mysql2 -g
  * yarn add bcryptjs
  * yarn add jsonwebtoken
+ * yarn add yup
 
 - - - - - - - - - - NODEDOM - - -  -- -- - - -- - - -- -
  Gerencia toda alteração que for realizada no código automaticamente
