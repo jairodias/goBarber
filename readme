@@ -12,6 +12,7 @@ aplicação..
  * yarn sequelize db:migrate
  * yarn add mysql2 -g
  * yarn add bcryptjs
+ * yarn add jsonwebtoken
 
 - - - - - - - - - - NODEDOM - - -  -- -- - - -- - - -- -
  Gerencia toda alteração que for realizada no código automaticamente
@@ -32,3 +33,11 @@ _________________________________________________
 
 _________________________________________________
 
+
+Após descriptogradar o token, ele virá como resultado o
+id usado para criptografar.
+
+IMPORTANTE **** Pois não precisa manipular os dados de outra forma
+mantendo assim a forma mais simples de busca do user e referencia de
+maneira mais segura
+_________________________________________________
