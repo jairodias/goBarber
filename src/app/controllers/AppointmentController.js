@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import { startOfHour, parseISO, isBefore, format } from 'date-fns';
+import { startOfHour, parseISO, isBefore } from 'date-fns';
 import User from '../models/User';
 import File from '../models/File';
 import Appointment from '../models/Appointment';
@@ -72,14 +72,12 @@ class AppointmentController {
       });
     }
 
-    const hourNow = format(hourStart, 'yyyy-mm-dd H:hh:ss');
-
     /** Verifica se a data é posterior ao momento atual */
     const checkAvailabity = await Appointment.findOne({
       where: {
         provider_id,
         canceled_at: null,
-        date: hourNow,
+        date: hourStart,
       },
     });
 
@@ -92,7 +90,7 @@ class AppointmentController {
     const appointments = await Appointment.create({
       user_id: req.userId,
       provider_id,
-      hourNow,
+      date: hourStart,
     });
 
     return res.json(appointments);
