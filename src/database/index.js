@@ -19,6 +19,7 @@ class Database {
 
     User.belongsTo(File, {
       foreignKey: 'avatar_id',
+      as: 'avatar',
     }); /** pertence a */
   }
 }
