@@ -2,10 +2,11 @@ import Sequelize from 'sequelize';
 
 import User from '../app/models/User';
 import File from '../app/models/File';
+import Appointment from '../app/models/Appointment';
 
 import databaseConfig from '../config/database';
 
-const models = [User, File];
+const models = [User, File, Appointment];
 
 class Database {
   constructor() {
@@ -20,6 +21,16 @@ class Database {
     User.belongsTo(File, {
       foreignKey: 'avatar_id',
       as: 'avatar',
+    }); /** pertence a */
+
+    Appointment.belongsTo(User, {
+      foreignKey: 'user_id',
+      as: 'user',
+    }); /** pertence a */
+
+    Appointment.belongsTo(User, {
+      foreignKey: 'provider_id',
+      as: 'provider',
     }); /** pertence a */
   }
 }
