@@ -37,10 +37,14 @@ class Database {
   }
 
   mongo() {
-    this.mongoConnection = mongoose.connect('mongodb://localhost/gobarber', {
-      useNewUrlParser: true,
-      useFindAndModify: true,
-    });
+    this.mongoConnection = mongoose.createConnection(
+      'mongodb://localhost/gobarber',
+      {
+        useNewUrlParser: true,
+        useFindAndModify: true,
+        useUnifiedTopology: true,
+      }
+    );
   }
 }
 
