@@ -1,18 +1,17 @@
 import Sequelize from 'sequelize';
-import mongoose from 'mongoose';
 
 import User from '../app/models/User';
 import File from '../app/models/File';
 import Appointment from '../app/models/Appointment';
+import Notification from '../app/models/Notification';
 
 import databaseConfig from '../config/database';
 
-const models = [User, File, Appointment];
+const models = [User, File, Appointment, Notification];
 
 class Database {
   constructor() {
     this.init();
-    this.mongo();
   }
 
   init() {
@@ -34,17 +33,6 @@ class Database {
       foreignKey: 'provider_id',
       as: 'provider',
     }); /** pertence a */
-  }
-
-  mongo() {
-    this.mongoConnection = mongoose.createConnection(
-      'mongodb://localhost/gobarber',
-      {
-        useNewUrlParser: true,
-        useFindAndModify: true,
-        useUnifiedTopology: true,
-      }
-    );
   }
 }
 

@@ -14,8 +14,10 @@ aplicação..
  * yarn add bcryptjs
  * yarn add jsonwebtoken
  * yarn add yup
-
+ * yarn add date-fns@next
  * yarn add multer
+
+
 
 - - - - - - - - - - NODEDOM - - -  -- -- - - -- - - -- -
  Gerencia toda alteração que for realizada no código automaticamente
