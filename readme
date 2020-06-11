@@ -20,6 +20,11 @@ aplicação..
  * yarn add nodemailer
  * yarn add express-handlebars nodemailer-express-handlebars
 
+
+
+ * yarn add @sentry/node@5.17.0 (verificação de bug)
+ * yarn addd express-async-errors (para o express assimilar os erros)
+
 BACKGROUND JOB COM BEE-QUEUE
 * yarn add bee-queue
 
