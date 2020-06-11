@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import { startOfHour, parseISO, isBefore, format } from 'date-fns';
+import { startOfHour, parseISO, isBefore, format, subHours } from 'date-fns';
 import User from '../models/User';
 import File from '../models/File';
 import Appointment from '../models/Appointment';
@@ -65,6 +65,12 @@ class AppointmentController {
         .json({ error: 'You can only create appointments with providers' });
     }
 
+    if (checkIsProvider.id == req.userId) {
+      return res.status(401).json({
+        error: 'It is not possible to make an appointment with yourself',
+      });
+    }
+
     /** pega somente o inicio da data,
      * exemplo : 18:30:20 ele pega
      * somente o 18hrs */
@@ -121,6 +127,34 @@ class AppointmentController {
     }
 
     return res.json(appointments);
+  }
+
+  async delete(req, res) {
+    const appointment = await Appointment.findByPk(req.params.id);
+
+    if (!appointment) {
+      return res.status(400).json({ error: 'Record does not exist' });
+    }
+    if (appointment.user_id !== req.user_id) {
+      return res.status(401).json({
+        error: "Your don't have permission to cancel this appointment.",
+      });
+    }
+
+    /** retirando 2 horas da data e verificando a possibilidade de cancelamento */
+    const dateWithSub = subHours(appointment.date, 2);
+
+    if (isBefore(dateWithSub, new Date())) {
+      return res.status(401).json({
+        error: 'You can only cancel appointments 2 hours in advance',
+      });
+    }
+
+    appointment.canceled_at = new Date();
+
+    await appointment.save();
+
+    return res.json(appointment);
   }
 }
 
