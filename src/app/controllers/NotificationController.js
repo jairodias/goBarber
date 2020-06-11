@@ -39,16 +39,6 @@ class NotificationController {
       res.status(401).json({ error: 'Request failed' });
     }
   }
-
-  async delete(req, res) {
-    const appointment = await Appointment.findByPk(req.params.id);
-
-    if (appointment.user_id !== req.user_id) {
-      return res.status(401).json({
-        error: "Your don't have permission to cancel this appointment.",
-      });
-    }
-  }
 }
 
 export default new NotificationController();

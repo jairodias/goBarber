@@ -17,6 +17,8 @@ aplicação..
  * yarn add date-fns@next
  * yarn add multer
 
+ * yarn add nodemailer
+
 
 
 - - - - - - - - - - NODEDOM - - -  -- -- - - -- - - -- -
