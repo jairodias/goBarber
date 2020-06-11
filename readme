@@ -18,6 +18,11 @@ aplicação..
  * yarn add multer
 
  * yarn add nodemailer
+ * yarn add express-handlebars nodemailer-express-handlebars
+
+BACKGROUND JOB COM BEE-QUEUE
+* yarn add bee-queue
+
 
 
 
